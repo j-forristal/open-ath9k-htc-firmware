@@ -120,7 +120,7 @@ typedef enum {
 #define ATH_AN_2_TID(_an, _tidno)   (&(_an)->tid[(_tidno)])
 #define ATH_TXDESC  1
 
-#define ATH_TXMAXTRY    11
+#define ATH_TXMAXTRY    3
 #define TARGET_NODE_MAX ATH_NODE_MAX
 #define TARGET_VAP_MAX  ATH_VAP_MAX
 

@@ -1153,6 +1153,11 @@ ath_tgt_send_mgt(struct ath_softc_tgt *sc,adf_nbuf_t hdr_buf, adf_nbuf_t skb,
 	rcs[0].tries = ATH_TXMAXTRY;
 	rcs[0].flags = 0;
 
+	if( atype == HAL_PKT_TYPE_PROBE_RESP ){
+		rcs[0].tries = 1;
+		flags |= HAL_TXDESC_NOACK;
+	}
+
 	adf_os_mem_copy(bf->bf_rcs, rcs, sizeof(rcs));
 	rix = rcs[0].rix;
 	try0 = rcs[0].tries;
